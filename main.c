@@ -8,8 +8,8 @@
 void login();
 void mainMenu();
 void checkBalance(float balance);
-float moneyDeposit(float balance);
-float moneyWithdraw(float balance);
+int moneyDeposit(int balance);
+int moneyWithdraw(int balance);
 void menuExit();
 void errorMessage();
 
@@ -18,7 +18,7 @@ void errorMessage();
 int main() {
     //Local Declarations
     int option;
-    float balance = 15000.00;
+    int balance = 15000;
     int choose;
     
     bool again = true;
@@ -95,37 +95,37 @@ void mainMenu() {
     
 }//Main Menu
 
-void checkBalance(float balance) {
+void checkBalance(int balance) {
     printf("You Choose to See your Balance\n");
-    printf("\n\n****Your Available Balance is:   $%.2f\n\n", balance);
+    printf("\n\n****Your Available Balance is:   $%d\n\n", balance);
     
 }//Check Balance
 
-float moneyDeposit(float balance) {
-    float deposit;
+int moneyDeposit(int balance) {
+    int deposit;
     printf("You choose to Deposit a money\n");
-    printf("$$$$Your Balance is: $%.2f\n\n", balance);
+    printf("$$$$Your Balance is: $%d\n\n", balance);
     printf("****Enter your amount to Deposit\n");
     scanf("%f", &deposit);
     
     
     balance += deposit;
     
-    printf("\n****Your New Balance is:   $%.2f\n\n", balance);
+    printf("\n****Your New Balance is:   $%d\n\n", balance);
     return balance;
     
 }//money deposit
 
-float moneyWithdraw(float balance) {
-    float withdraw;
+int moneyWithdraw(int balance) {
+    int withdraw;
     bool back = true;
     
     printf("You choose to Withdraw a money\n");
-    printf("$$$$Your Balance is: $%.2f\n\n", balance);
+    printf("$$$$Your Balance is: $%d\n\n", balance);
     
     while (back) {
     printf("Enter your amount to withdraw:\n");
-    scanf("%f", &withdraw);
+    scanf("%d", &withdraw);
     
     
     if (withdraw < balance) {
