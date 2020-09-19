@@ -51,21 +51,22 @@ int main() {
 
 
 
-void test_moneyDeposit(void) {
+void test_moneyDeposit(void)
+{
 
-    CU_ASSERT((balance+ deposit)>=balance)
+    CU_ASSERT(3000== moneyDeposit(1500))
     
 	/* Dummy fail*/
-    CU_ASSERT ((balance+ deposit)==balance)
+    CU_ASSERT (2400==moneyDeposite(1500))
     
 }//money deposit
 
-void test_moneyWithdraw(void) {
-    
-    CU_ASSERT((balance - withdraw)<=balance)
+void test_moneyWithdraw(void)
+{
+    CU_ASSERT(0== moneyWithdraw(1500))
     
 	/* Dummy fail*/
-    CU_ASSERT ((balance-withdraw)==balance)
+    CU_ASSERT (1500==moneyWithdraw(1500))
     
     
 }//money withdraw
