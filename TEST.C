@@ -8,8 +8,9 @@
 //Functions
 
 
-
+void test_with_cash(void);
 void test_moneyDeposit(void);
+void test_to_send(void);
 void test_moneyWithdraw(void);
 
 
@@ -26,8 +27,9 @@ int main() {
   
   /* Add your test functions in this format for testing*/
  
-  
+  CU_add_test(suite, "with_cash", test_with_cash);
   CU_add_test(suite, "moneyDeposit", test_moneyDeposit);
+  CU_add_test(suite, "to_send", test_to_send);
   CU_add_test(suite, "moneyWithdraw", test_moneyWithdraw);
   
   
@@ -51,22 +53,36 @@ int main() {
 
 
 
-void test_moneyDeposit(void)
-{
-
-    CU_ASSERT(3000== moneyDeposit(1500))
-    
-	/* Dummy fail*/
-    CU_ASSERT (2400==moneyDeposite(1500))
+   void test_with_cash(void) {
+  CU_ASSERT(500 == with_cash(500, 1000));
+  
+  /* Dummy fail*/
+  CU_ASSERT(100== with_cash(100, 900));
+}
+	
+	void test_moneyDeposit(void) {
+  CU_ASSERT(1500== deposits_cash(500,1000));
+  
+  /* Dummy fail*/
+  CU_ASSERT(200 == deposits_cash(200,500));
+}
     
 }//money deposit
 
+	void test_to_send(void) {
+	  CU_ASSERT(800== to_send(200,1000));
+	  
+	  /* Dummy fail*/
+	  CU_ASSERT(300 == to_send(200,500));
+	}
+
+
 void test_moneyWithdraw(void)
 {
-    CU_ASSERT(0== moneyWithdraw(1500))
+    CU_ASSERT(1000== moneyWithdraw(1500,400))
     
 	/* Dummy fail*/
-    CU_ASSERT (1500==moneyWithdraw(1500))
+    CU_ASSERT (4000==moneyWithdraw(1500,400))
     
     
 }//money withdraw
